@@ -5,13 +5,15 @@
         <div *ngIf="!loading">
             <div *ngFor="let comment of comments" class="comment">
                 <div class="comment-header">
-                    <img class="avatar" src="https://via.placeholder.com/32" alt="User Avatar">
+                    <img class="avatar"
+                        [src]="'https://ui-avatars.com/api/?name=' + comment.name + '&background=657786&color=fff'"
+                        alt="User Avatar">
                     <div class="comment-meta">
                         <span class="username">{{comment.name}}</span>
                         <span class="timestamp">· {{getRelativeTime()}}</span>
                     </div>
                 </div>
-                <p>{{comment.body}}</p>
+                <p>{{comment.body}}</p> <!-- Fixed: Use comment.body instead of post.body -->
                 <small class="email">{{comment.email}}</small>
             </div>
         </div>
