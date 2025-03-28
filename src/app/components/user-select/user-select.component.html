@@ -1,0 +1,7 @@
+<div class="user-select-wrapper">
+    <label for="userSelect">Select User:</label>
+    <select id="userSelect" (change)="onUserChange($event)" [(ngModel)]="selectedUserId" [disabled]="loading">
+      <option *ngFor="let user of users" [value]="user.id">{{user.username}}</option>
+    </select>
+    <div *ngIf="loading" class="loading">Loading users...</div>
+</div>

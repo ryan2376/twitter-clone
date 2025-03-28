@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Twitter Clone</h1>
+  <app-user-select (userSelected)="onUserSelected($event)"></app-user-select>
+  <div class="main-content">
+    <div class="posts-column">
+      <app-post-list [userId]="selectedUserId" (postSelected)="onPostSelected($event)"></app-post-list>
+    </div>
+    <div class="comments-column" *ngIf="selectedPostId">
+      <app-comment-list [postId]="selectedPostId"></app-comment-list>
+    </div>
+  </div>
+</div>

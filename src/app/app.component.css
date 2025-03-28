@@ -1,0 +1,68 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f8fa;
+    /* Twitter's light background */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+    color: #1da1f2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.main-content {
+    display: flex;
+    gap: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.posts-column {
+    flex: 1;
+    min-width: 350px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.posts-column::-webkit-scrollbar {
+    width: 8px;
+}
+
+.posts-column::-webkit-scrollbar-thumb {
+    background-color: #1da1f2;
+    border-radius: 4px;
+}
+
+.posts-column::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+.comments-column {
+    flex: 1;
+    min-width: 350px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-left: 10px;
+}
+
+.comments-column::-webkit-scrollbar {
+    width: 8px;
+}
+
+.comments-column::-webkit-scrollbar-thumb {
+    background-color: #1da1f2;
+    border-radius: 4px;
+}
+
+.comments-column::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}

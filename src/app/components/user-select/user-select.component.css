@@ -1,0 +1,47 @@
+.user-select-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #14171a;
+    margin-right: 15px;
+}
+
+select {
+    width: 250px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccd6dd;
+    border-radius: 25px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+select:focus {
+    outline: none;
+    border-color: #1da1f2;
+    box-shadow: 0 0 8px rgba(29, 161, 242, 0.3);
+}
+
+select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+select:hover:not(:disabled) {
+    border-color: #1da1f2;
+}
+
+.loading {
+    color: #657786;
+    font-size: 14px;
+    margin-left: 15px;
+    font-style: italic;
+}
