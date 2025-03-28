@@ -1,1 +1,6 @@
-<p>comment-list works!</p>
+<div class="comments">
+    <div *ngFor="let comment of comments" class="comment">
+        <strong>{{comment.name}}</strong> ({{comment.email}})<br>
+        {{comment.body}}
+    </div>
+</div>

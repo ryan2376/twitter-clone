@@ -1,0 +1,9 @@
+.comments {
+    margin-top: 20px;
+}
+
+.comment {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+}
