@@ -1,6 +1,19 @@
-<div class="comments">
-    <div *ngFor="let comment of comments" class="comment">
-        <strong>{{comment.name}}</strong> ({{comment.email}})<br>
-        {{comment.body}}
+<div class="comment-section">
+    <div class="comments">
+        <h4>Replies</h4>
+        <div *ngIf="loading" class="loading">Loading comments...</div>
+        <div *ngIf="!loading">
+            <div *ngFor="let comment of comments" class="comment">
+                <div class="comment-header">
+                    <img class="avatar" src="https://via.placeholder.com/32" alt="User Avatar">
+                    <div class="comment-meta">
+                        <span class="username">{{comment.name}}</span>
+                        <span class="timestamp">· {{getRelativeTime()}}</span>
+                    </div>
+                </div>
+                <p>{{comment.body}}</p>
+                <small class="email">{{comment.email}}</small>
+            </div>
+        </div>
     </div>
 </div>

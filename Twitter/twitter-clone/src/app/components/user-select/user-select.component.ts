@@ -1,12 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { CommonModule } from '@angular/common'; // For *ngFor
-import { FormsModule } from '@angular/forms';   // For ngModel
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-user-select',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Added FormsModule
+  imports: [CommonModule, FormsModule],
   templateUrl: './user-select.component.html',
   styleUrls: ['./user-select.component.css']
 })
@@ -14,12 +14,19 @@ export class UserSelectComponent implements OnInit {
   users: any[] = [];
   selectedUserId: number = 1;
   @Output() userSelected = new EventEmitter<number>();
+  loading = false; // Add loading state
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.loading = true;
     this.apiService.getUsers().subscribe(users => {
       this.users = users;
+      this.loading = false;
       this.userSelected.emit(this.selectedUserId);
     });
   }
